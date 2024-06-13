@@ -136,9 +136,9 @@ module.exports = {
           "react-native$": "react-native-web",
         },
         plugins: webpackConfig.resolve.plugins.map((plugin) => {
-          // Allow vanilla-extract in production builds.
-          // This is necessary because create-react-app guards against external imports.
-          // See https://sandroroth.com/blog/vanilla-extract-cra#production-build.
+        //   // Allow vanilla-extract in production builds.
+        //   // This is necessary because create-react-app guards against external imports.
+        //   // See https://sandroroth.com/blog/vanilla-extract-cra#production-build.
           if (plugin instanceof ModuleScopePlugin) {
             plugin.allowedPaths.push(
               path.join(
@@ -149,7 +149,9 @@ module.exports = {
               ),
             );
           }
-
+          webpackConfig.resolve.plugins[0].allowedPaths.push(
+            require.resolve('@vanilla-extract/webpack-plugin')
+          );
           return plugin;
         }),
         // Webpack 5 does not resolve node modules, so we do so for those necessary:
