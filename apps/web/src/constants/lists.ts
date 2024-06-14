@@ -29,7 +29,7 @@ const SET_LIST =
 const WRAPPED_LIST = "wrapped.tokensoft.eth";
 
 // mode testnet token list api
-export const MODE_LIST = "https://api.udonswap.org/tokens";
+export const MODE_LIST = "https://tokenlist-api.vercel.app/v3-tokens";
 // export const OPTIMISM_LIST =
 //   "https://static.optimism.io/optimism.tokenlist.json";
 // export const ARBITRUM_LIST = "https://bridge.arbitrum.io/token-list-42161.json";
